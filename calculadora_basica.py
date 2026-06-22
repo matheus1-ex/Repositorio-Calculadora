@@ -10,7 +10,7 @@ def calculadora(n1, n2, operador):
 			case "/":
 				div = n1 / n2
 				print(div)
-			case "*":
+			case "x":
 				mult = n1 * n2
 				print(mult)
 			case " ":
@@ -19,16 +19,17 @@ def calculadora(n1, n2, operador):
 
 start = True
 while start != "del":
-	start = input("Digite (start) para começar e (del) para sair: ").strip().upper()
+	start = input("Digite '0' para começar ou digite (del) para sair: ").strip().upper()
 	if start == "DEL":
 		break
-	if start not in ("DEL", "START"):
+	if start not in ("0", "DEL"):
 		print("PEENN! Inválido")
-		while start not in ("del", "start"):
-			start = input("Digite (start) para começar e (del) para sair: ")
+		while start not in ("0", "DEL"):
+			start = input("Precione (enter) para começar ou Digite (del) para sair: ")
 	if start:
 		num1 = float(input("Digite um número: "))
 		num2 = float(input("Digite outro número: "))
+		print("[ + ] [ - ] [ / ] [ x ]")
 		op = str(input("Digite o operador: "))
 		calculadora(num1, num2, op)
 	continuar = input("Deseja continuar? (S/N): ").strip().upper()[0]
